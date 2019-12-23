@@ -4,6 +4,7 @@
  */
 
 import Router from '@koa/router';
+import _ from 'lodash';
 import * as path from 'path';
 import { WebConf } from '../conf';
 import { matrixRouter } from './Metrics';
