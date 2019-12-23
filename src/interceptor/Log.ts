@@ -32,7 +32,7 @@ export async function LogInterceptor(
     await prometheusService.requestLog(context.path);
     try {
         await next();
-        logger.verbose(`${
+        logger.info(`${
             chalk.bgGray.green.bold('[ success ]')
         } ${
             context.originalUrl
