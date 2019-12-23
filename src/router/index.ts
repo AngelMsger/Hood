@@ -15,7 +15,9 @@ import { wakatimeRouter } from './Wakatime';
  *       such like http://example.com/prefix
  */
 export const rootRouter = new Router({
-    prefix: path.join('/', WebConf.path)
+    prefix: _.isEmpty(WebConf.path)
+        ? ''
+        : path.join('/', WebConf.path)
 });
 
 rootRouter.use('/wakatime', wakatimeRouter.routes());
