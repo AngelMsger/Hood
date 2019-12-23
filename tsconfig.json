@@ -27,7 +27,7 @@
         "noFallthroughCasesInSwitch": true,
         "moduleResolution": "node",
         "baseUrl": "./src",
-        "types": ["reflect-metadata"],
+        "types": ["reflect-metadata","mocha"],
         "esModuleInterop": true,
         "inlineSourceMap": true,
         "experimentalDecorators": true,
