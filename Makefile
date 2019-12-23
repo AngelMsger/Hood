@@ -4,10 +4,13 @@ build:
 lint:
 	npm run lint
 
+test:
+	npm run test
+
 docker: build lint
 	docker build -t hood
 
-start:
+start: docker
 	docker-compose up -d
 
 stop:
