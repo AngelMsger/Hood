@@ -1,0 +1,35 @@
+version: "3.7"
+services:
+    mongodb:
+        image: mongo:4
+        expose:
+            - 27017
+        volumes:
+            - "/data/hood/db:/data/db"
+        restart: always
+
+    cache:
+        image: redis:5
+        expose:
+            - 6379
+        volumes:
+            - "/data/hood/cache:/data"
+        restart: always
+
+    web:
+        build: .
+        image: hood
+        ports:
+            - 3000:3000
+        environment:
+            TIMEZONE: Asia/Shanghai
+            LEET_CODE_USERNAME: angelmsger
+            MONGO_HOST: mongodb
+            WAKATIME_USERNAME: angelmsger
+            WAKATIME_SECRET_KEY: replace_with_your_secret_key
+            WEB_PATH: hood
+            REDIS_HOST: cache
+        restart: always
+        depends_on:
+            - mongodb
+            - cache

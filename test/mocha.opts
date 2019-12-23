@@ -1,0 +1,12 @@
+--recursive
+--require ts-node/register/transpile-only
+--require source-map-support/register
+--ui bdd
+--no-warnings
+--exit
+--reporter min
+--timeout 5000
+
+./test/*.ts
+./test/**/*.ts
+
